@@ -88,9 +88,9 @@ db.getCollection("cuttings_raw").aggregate(
 		{
 			$lookup: // Equality Match
 			{
-			    from: "scraped_web_pages",
+			    from: "web_page_info",
 			    localField: "crcwc_url",
-			    foreignField: "source",
+			    foreignField: "crcwc_url",
 			    as: "scrape"
 			}
 		},
