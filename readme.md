@@ -1,3 +1,8 @@
+### Provisional Software Statement
+Under USGS Software Release Policy, the software codes here are considered preliminary, not released officially, and posted to this repo for informal sharing among colleagues.
+
+This software is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The software has not received final approval by the U.S. Geological Survey (USGS). No warranty, expressed or implied, is made by the USGS or the U.S. Government as to the functionality of the software and related material nor shall the fact of release constitute any such warranty. The software is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the software.
+
 # CRC Records for Cores and Collections to ScienceBase
 This project explores a couple of the concepts we are pursuing for the next generation of the National Digital Catalog by using the USGS Core Research Center (CRC) as an example use case. The CRC manages collections of rock cores and cuttings at the USGS facility in Lakewood. The CRC has had a databased inventory for decades, the "CRC Well Catalog," that has been through several different generations of technology. This situation is generally typical across many of the other institutions managing geoscience collections (or other scientific collections for that matter). The CRC inventory management system consists of the following major technical components:
 
