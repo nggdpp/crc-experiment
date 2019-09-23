@@ -8,7 +8,9 @@ The methods in this workflow use a local instance of a out of the box MongoDB in
 
 ``docker run -d -p 27017:27107 -v ~/data/crc-experiment:/data/db mongo``
 
-Replace "~/data/crc-experiment" with whatever local path you want to persist your data in, or run the Docker container purely with no persistence at all.
+Replace "~/data/crc-experiment" with whatever local path you want to persist your data in, or run the Docker container purely with no persistence at all. Note that this creates a non-production, wide open MongoDB instance running on whatever machine you run Docker on. It's not meant for anything other than standing in as a temporary data store for the data in motion within this workflow. You don't even need to persist the data here unless you are going to come back to this and want to leave things intact. I used MongoDB because if it's ease of use for JSON-based documents and the power of it's aggregation system, which I take advantage of at several points and note in my documentation.
+
+All of the references to create a MongoClient in the code rely on accessing a local instance on port 27017 with no authentication requirement. Alternatively, you could spin up an account on the free [MLab service](https://mlab.com/) or access any other MongoDB instance you might have access to. You will then need to adjust the calls to open up a MongoClient to include the necessary access and authentication information in whatever way you choose.
 
 # Binder View
 
@@ -16,7 +18,7 @@ If you want to run these notebooks in Binder, you can do that via the following:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nggdpp/crc-experiment/master)
 
-The environment.yml should solve all the necessary dependencies when it launches other than the MongoDB instance. Any code that runs against the CRC web site, ScienceBase, Macrostrat, or other open and public access points should execute, and you can fiddle with where and how the resulting data is processed in memory or persisted.
+The environment.yml should solve all the necessary dependencies when it launches other than the MongoDB instance. Any code that runs against the CRC web site, ScienceBase, Macrostrat, or other open and public access points should execute, and you can fiddle with where and how the resulting data is processed in memory or persisted. See the notes above if you want to solve or change the MongoDB dependency.
 
 # Workflow Sequence
 The overall process for this experiment is described in the main readme at the root. This readme lists the specific workflow steps as links to the Jupyter Notebooks containing their code and discussion. These steps do need to be run in sequence at first or otherwise have their data dependencies met.
